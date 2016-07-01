@@ -68,7 +68,7 @@ var projects = {
     ]
 };
 
-if (bio.skills.length > 0) {
+/**if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -84,3 +84,23 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
 
 }
+*/
+var name = "Samuel Alexander";
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = "Web Developer";
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+/**for (job in work.jobs) {
+    $("#workExperience").append(HTMLWorkStart);
+
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+    $(".work-entry:last").append(formattedEmployerTitle);
+}
+*/
