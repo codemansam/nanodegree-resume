@@ -54,14 +54,14 @@ var projects = {
 var work = {
     "jobs": [
         {
-            "employer": "self",
-            "title": "Boss",
+            "employer": "Self-employed",
+            "title": "'Boss'",
             "dates": "2009 - 2015",
             "description": "Lawn mowing contractor."
         },
         {
             "employer": "NZ Post Inc",
-            "title": "Postie",
+            "title": "'Postie'",
             "dates": "2004 - 2009",
             "description": "Responsible for sorting and delivering residential mail"
         }
@@ -71,15 +71,12 @@ var work = {
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
 
-
-
     for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
-
 
     $(".work-entry:last").append(formattedEmployerTitle);
 }
