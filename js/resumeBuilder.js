@@ -68,8 +68,9 @@ var work = {
     ]
 };
 
-$("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
+$("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
+
 
 
     for (var job in work.jobs) {
