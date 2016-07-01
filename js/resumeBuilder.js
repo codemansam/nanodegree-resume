@@ -12,18 +12,22 @@ var bio = {
     "skills": ["awesomeness", "studying", "manualism", "twaddling"]
 };
 
-var work = {};
-
-work.position = "Lawn Mowing Contractor";
-work.employer = "Self";
-work.years = "6";
-work.city ="Auckland";
-
-var education = {};
-education["name"] = "Auckland University"
-education["years"] = "1998-2002";
-education["city"] = "Auckland, NZ";
-
+var work = {
+    "jobs": [
+        {
+            "employer": "self",
+            "title": "Boss",
+            "dates": "2009 - 2015",
+            "description": "Lawn mowing contractor."
+        },
+        {
+            "employer": "NZ Post Inc",
+            "title": "Postie",
+            "dates": "2004 - 2009",
+            "description": "Responsible for sorting and delivering residential mail"
+        }
+    ]
+};
 
 var education = {
     "schools": [
@@ -49,3 +53,34 @@ var education = {
         }
     ]
 };
+
+var projects = {
+    "projects": [
+        {
+            "title": "Sample Project 1",
+            "dates": "2014",
+            "description": "add text here.",
+            "images": [
+            "images/image1.jpg",
+            "images/image2.jpg"
+            ]
+        }
+    ]
+};
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkill);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkill);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+    $("#skills").append(formattedSkill);
+
+}
