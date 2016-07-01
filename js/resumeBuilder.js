@@ -57,7 +57,7 @@ var work = {
             "employer": "Self-employed",
             "title": "'Boss'",
             "dates": "2009 - 2015",
-            "description": "Lawn mowing contractor."
+            "description": "Lawn mowing contractor"
         },
         {
             "employer": "NZ Post Inc",
@@ -70,6 +70,22 @@ var work = {
 
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
+//mob email github location
+    //for (var contact in bio.contacts) {
+        //$("#topContacts").append(HTMLcontactGeneric);
+
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
+    $("#topContacts").append(formattedMobile);
+
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#topContacts").append(formattedEmail);
+
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    $("#topContacts").append(formattedGithub);
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts").append(formattedLocation);
+
 
     for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
@@ -79,4 +95,10 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
     var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
 
     $(".work-entry:last").append(formattedEmployerTitle);
+
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
 }
