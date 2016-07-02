@@ -3,7 +3,7 @@ var bio = {
     "role": "Web Developer",
     "contacts": {
         "mob": "022 656 7919",
-        "email": "same@stacked.co.nz",
+        "email": "sam@stacked.co.nz",
         "github": "https://github.com/codemansam",
         "location": "Auckland, NZ"
     },
