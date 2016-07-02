@@ -47,7 +47,7 @@ var projects = {
             "images/fusion1.jpg",
             "images/fusion2.jpg"
             ]
-        }
+        },
         {
             "title": "Hyperloop",
             "dates": "2016",
@@ -108,7 +108,7 @@ $("#header").append(HTMLskillsStart);
         $("#header").append(formattedSkill);
 }
 // Work Experience
-    for (var job in work.jobs) {
+    for (var job = 0; job < work.jobs.length; job++) {
         $("#workExperience").append(HTMLworkStart);
 
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -123,6 +123,9 @@ $("#header").append(HTMLskillsStart);
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
     }
-
+//projects
+//project images
+//schools
+//online courses
 
 
