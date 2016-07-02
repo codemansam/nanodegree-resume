@@ -40,14 +40,24 @@ var education = {
 var projects = {
     "projects": [
         {
-            "title": "Sample Project 1",
+            "title": "Fusion Power",
             "dates": "2014",
-            "description": "add text here.",
+            "description": "Harness the power of the stars!",
             "images": [
-            "images/image1.jpg",
-            "images/image2.jpg"
+            "images/fusion1.jpg",
+            "images/fusion2.jpg"
             ]
         }
+        {
+            "title": "Hyperloop",
+            "dates": "2016",
+            "description": "Cheap, reliable, super quick travel!",
+            "images": [
+            "images/hyperloop1.jpg",
+            "images/hyperloop2.jpg"
+            ]
+        }
+
     ]
 };
 
@@ -72,46 +82,47 @@ $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
 
 //Contact info
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
+$("#topContacts").append(formattedMobile);
 
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
-    $("#topContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
 
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $("#topContacts").append(formattedEmail);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGithub);
 
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $("#topContacts").append(formattedGithub);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
 
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").append(formattedLocation);
+var formattedPic  = HTMLbioPic.replace("%data%", bio.pic);
+$("#header").append(formattedPic);
 
-    var formattedPic  = HTMLbioPic.replace("%data%", bio.pic);
-    $("#header").append(formattedPic);
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMessage);
 
-    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedWelcomeMessage);
-
-    $("#header").append(HTMLskillsStart);
+// Skills
+$("#header").append(HTMLskillsStart);
     for (var skill in bio.skills) {
 
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#header").append(formattedSkill);
+}
+// Work Experience
+    for (var job in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
+
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
+
+        $(".work-entry:last").append(formattedEmployerTitle);
+
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        $(".work-entry:last").append(formattedDates);
+
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedDescription);
     }
 
 
-// Work Experience  this is fuccccked?
-    $("#workExperience").append(HTMLworkStart);
-    for (var job in work.jobs) {
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
-
-    $(".work-entry:last").append(formattedEmployerTitle);
-
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    $(".work-entry:last").append(formattedDates);
-
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);
-}
