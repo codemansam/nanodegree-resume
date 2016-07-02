@@ -7,7 +7,7 @@ var bio = {
         "github": "https://github.com/codemansam",
         "location": "Auckland, NZ"
     },
-    "bioPic": "images.fry.jpg",
+    "pic": "images/fry.jpg",
     "welcomeMessage": "Hi there!",
     "skills": ["awesomeness", "studying", "manualism", "twaddling"]
 };
@@ -69,7 +69,7 @@ var work = {
 };
 
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
+$("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
 //mob email github location
     //for (var contact in bio.contacts) {
         //$("#topContacts").append(HTMLcontactGeneric);
@@ -86,8 +86,13 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
 
+    var formattedPic  = HTMLbioPic.replace("%data%", bio.pic);
+    $("#header").append(formattedPic);
 
-    for (var job in work.jobs) {
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedWelcomeMessage);
+
+/**    for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -100,5 +105,6 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio. name));
     $(".work-entry:last").append(formattedDates);
 
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);
+    $("#main").append(formattedDescription);
 }
+*/
