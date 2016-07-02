@@ -67,12 +67,11 @@ var work = {
         }
     ]
 };
-
+// Name and Role
 $("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
-//mob email github location
-    //for (var contact in bio.contacts) {
-        //$("#topContacts").append(HTMLcontactGeneric);
+
+//Contact info
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
     $("#topContacts").append(formattedMobile);
@@ -92,7 +91,16 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMessage);
 
-/**    for (var job in work.jobs) {
+    $("#header").append(HTMLskillsStart);
+    for (var skill in bio.skills) {
+
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+        $("#header").append(formattedSkill);
+    }
+
+
+// Work Experience
+    for (var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -107,4 +115,3 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $("#main").append(formattedDescription);
 }
-*/
