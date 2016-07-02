@@ -18,13 +18,15 @@ var education = {
         "name": "Auckland University",
         "city": "Auckland, NZ",
         "degree": "BSc",
-        "major": "Geography"
+        "major": "Geography",
+        "date": "1998-2002"
     },
     {
         "name": "Auckland University",
         "city": "Auckland, NZ",
         "degree": "Ba",
-        "major": "Philosopy"
+        "major": "Philosopy",
+        "date": "1998-2002"
     }
     ],
     "onlineCourses": [
@@ -42,19 +44,19 @@ var projects = {
         {
             "title": "Fusion Power",
             "dates": "2016",
-            "description": "Harness the power of the stars!",
+            "description": "Harness the power of the stars?  No problem, Sammy's solved it.",
             "images": [
-            "images/fusion1.jpg",
-            "images/fusion3.jpg"
+            "images/fusion3.jpg",
+            "images/fusion1.jpg"
             ]
         },
         {
             "title": "Hyperloop",
             "dates": "2014",
-            "description": "Cheap, reliable, super quick travel!",
+            "description": "Cheap, reliable, super quick travel? Sorted!",
             "images": [
-            "images/hyperloop2.jpg",
-            "images/hyperloop3.jpg"
+            "images/hyperloop3.jpg",
+            "images/hyperloop2.jpg"
             ]
         }
 
@@ -166,23 +168,28 @@ var displayEducation = function() {
         $("#education").append(HTMLschoolStart);
 
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-        $(".education-entry:last").append(formattedSchoolName);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 
-        //var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        $(".education-entry:last").append(formattedSchoolName + " " + formattedDegree);
+
+
         //$(".education-entry:last").append(formattedDegree);
 
-        //var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        //$(".education-entry:last").append(formattedDates);
+        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+        $(".education-entry:last").append(formattedDates);
 
-        //var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
-        //$(".education-entry:last").append(formattedCity);
+        var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+        $(".education-entry:last").append(formattedCity);
 
-        //var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-        //$(".education-entry:last").append(HTMLschoolMajor);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        $(".education-entry:last").append(formattedMajor);
         }
 }
+//university + degree (BSc or Ba)
+//dates
+//Major
 
-//displayEducation();
+displayEducation();
 
 //online courses
 
