@@ -41,7 +41,7 @@ var projects = {
     "projects": [
         {
             "title": "Fusion Power",
-            "dates": "2014",
+            "dates": "2016",
             "description": "Harness the power of the stars!",
             "images": [
             "images/fusion1.jpg",
@@ -50,7 +50,7 @@ var projects = {
         },
         {
             "title": "Hyperloop",
-            "dates": "2016",
+            "dates": "2014",
             "description": "Cheap, reliable, super quick travel!",
             "images": [
             "images/hyperloop1.jpg",
@@ -107,7 +107,8 @@ $("#header").append(HTMLskillsStart);
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
         $("#header").append(formattedSkill);
 }
-// Work Experience
+var displayWorkExperience = function() {
+
     for (var job = 0; job < work.jobs.length; job++) {
         $("#workExperience").append(HTMLworkStart);
 
@@ -123,9 +124,40 @@ $("#header").append(HTMLskillsStart);
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
     }
-//projects
+}
+displayWorkExperience();
+
+//projects title dates description images
+var displayProjects = function() {
+    for (var project = 0; project < projects.projects.length; project++) {
+         $("#projects").append(HTMLprojectStart);
+
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedProjectTitle);
+
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedProjectDates);
+
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+         $(".project-entry:last").append(formattedProjectDescription);
+
+        if (projects.projects[project].images.length > 0) {
+            //console.log("projects.projects[project].images.length " + projects.projects[project].images.length);
+            for (var image = 0; image < projects.projects[project].images.length; image++) {
+            //console.log("Checks for loop and image = " + image);
+            var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+            console.log("formattedProjectImage is now " + formattedProjectImage);
+            $(".project-entry:last").append(formattedProjectImage);
+            }
+        }
+
+    }
+}
+displayProjects();
 //project images
 //schools
 //online courses
+
+// DOn't forget encapsulation before you hand in!
 
 
