@@ -54,7 +54,7 @@ var projects = {
 var work = {
     "jobs": [
         {
-            "employer": "Self-employed",
+            "employer": "North Shore Lawns",
             "title": "'Boss'",
             "dates": "2009 - 2015",
             "description": "Lawn mowing contractor"
@@ -99,9 +99,9 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
     }
 
 
-// Work Experience
-    for (var job in work.jobs) {
+// Work Experience  this is fuccccked?
     $("#workExperience").append(HTMLworkStart);
+    for (var job in work.jobs) {
 
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -113,5 +113,5 @@ $("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
     $(".work-entry:last").append(formattedDates);
 
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $("#main").append(formattedDescription);
+    $(".work-entry:last").append(formattedDescription);
 }
