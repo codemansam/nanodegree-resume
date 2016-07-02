@@ -45,7 +45,7 @@ var projects = {
             "description": "Harness the power of the stars!",
             "images": [
             "images/fusion1.jpg",
-            "images/fusion2.jpg"
+            "images/fusion3.jpg"
             ]
         },
         {
@@ -53,8 +53,8 @@ var projects = {
             "dates": "2014",
             "description": "Cheap, reliable, super quick travel!",
             "images": [
-            "images/hyperloop1.jpg",
-            "images/hyperloop2.jpg"
+            "images/hyperloop2.jpg",
+            "images/hyperloop3.jpg"
             ]
         }
 
@@ -90,13 +90,15 @@ bio.display = function() {
     $("#header").prepend(formattedName);
 
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-var contactStrings = ["#topContacts", "#footerContacts"];
-    for (var i = 0, id; i < contactStrings.length; i++) {
+    var idStrings = ["#topContacts", "#footerContacts"];
+    for (var i = 0, id; i < idStrings.length; i++) {
+        id = idStrings[i];
+
         $(id).append(formattedLocation);
         $(id).append(formattedMobile);
         $(id).append(formattedEmail);
@@ -105,15 +107,11 @@ var contactStrings = ["#topContacts", "#footerContacts"];
 }
 bio.display();
 
-
-
-
-
 // Skills
 $("#header").append(HTMLskillsStart);
-    for (var skill in bio.skills) {
+    for (i = 0; i < bio.skills.length; i++) {
 
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#header").append(formattedSkill);
 }
 var displayWorkExperience = function() {
