@@ -180,11 +180,11 @@ var displayEducation = function() {
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedMajor);
         }
-
-
+        $(".education-entry:last").append(HTMLonlineClasses);
 
         for (var course = 0; course < education.onlineCourses.length; course++) {
-            $(".education-entry:last").append(HTMLonlineClasses);
+
+
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
             var formattedOnlineTitleAndSchool = formattedOnlineTitle + formattedOnlineSchool;
@@ -195,18 +195,11 @@ var displayEducation = function() {
 
             var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
             $(".education-entry:last").append(formattedOnlineURL);
-//title + school
-//dates
-//url
         }
 }
-//university + degree (BSc or Ba)
-//dates
-//Major
-
 displayEducation();
 
-//online courses
+$("#mapDiv").append(googleMap);
 
 // DOn't forget encapsulation before you hand in! everything within an if whatever is > 0 etc
 
