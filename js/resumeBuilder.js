@@ -8,28 +8,28 @@ var bio = {
         "location": "6 Sispara Place, Auckland, NZ"
     },
     "welcomeMessage": "Hi there!",
-    "pic": "images/fry.jpg",
-
     "skills": ["awesomeness", "studying", "manualism", "twaddling"]
+    "biopic": "images/fry.jpg",
 };
 
 var education = {
     "schools": [
     {
         "name": "Auckland University",
-        "city": "Auckland, NZ",
+        "location": "22 Princes Street, Auckland, NZ",
         "degree": "BSc",
-        "major": "Geography",
-        "date": "1998-2002",
-        "location": "22 Princes Street, Auckland, NZ"
+        "majors": ["Geography"],
+        "dates": "1998-2002",
+        "url": "https://www.auckland.ac.nz/en.html"
+
     },
     {
         "name": "Auckland University",
-        "city": "Auckland, NZ",
+        "location": "22 Princes Street, Auckland, NZ",
         "degree": "Ba",
-        "major": "Philosopy",
-        "date": "1998-2002",
-        "location": "22 Princes Street, Auckland, NZ"
+        "majors": ["Philosopy"],
+        "dates": "1998-2002",
+        "url": "https://www.auckland.ac.nz/en.html"
     }
     ],
     "onlineCourses": [
@@ -38,6 +38,25 @@ var education = {
         "school": "Udacity",
         "dates": "2016",
         "url": "http://www.udacity.com/course/ud804"
+        }
+    ]
+};
+
+var work = {
+    "jobs": [
+        {
+            "employer": "North Shore Lawns",
+            "title": "'Boss'",
+            "location": "6 Sispara Place, Beach Haven, Auckland, NZ",
+            "dates": "2009 - 2015",
+            "description": "Lawn mowing contractor"
+        },
+        {
+            "employer": "NZ Post Inc",
+            "title": "'Postie'",
+            "location": "76 Porana Rd, Hillcrest, Auckland, NZ",
+            "dates": "2004 - 2009",
+            "description": "Responsible for sorting and delivering residential mail"
         }
     ]
 };
@@ -66,22 +85,7 @@ var projects = {
     ]
 };
 
-var work = {
-    "jobs": [
-        {
-            "employer": "North Shore Lawns",
-            "title": "'Boss'",
-            "dates": "2009 - 2015",
-            "description": "Lawn mowing contractor"
-        },
-        {
-            "employer": "NZ Post Inc",
-            "title": "'Postie'",
-            "dates": "2004 - 2009",
-            "description": "Responsible for sorting and delivering residential mail"
-        }
-    ]
-};
+
 // Name and Role
 bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -174,7 +178,7 @@ var displayEducation = function() {
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         $(".education-entry:last").append(formattedSchoolName + " " + formattedDegree);
 
-        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         $(".education-entry:last").append(formattedDates);
 
         var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
