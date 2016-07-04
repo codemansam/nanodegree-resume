@@ -1,4 +1,6 @@
-/** Stores biographic information. */
+/**
+* @description Stores biographic information.
+*/
 var bio = {
     "name": "Samuel Alexander",
     "role": "Web Developer",
@@ -8,57 +10,64 @@ var bio = {
         "github": "https://github.com/codemansam",
         "location": "6 Sispara Place, Auckland, NZ"
     },
-    "welcomeMessage": "Hi there!",
-    "skills": ["awesomeness", "studying", "manualism", "twaddling"],
+    "welcomeMessage": "Hello there!  Welcome to my resume!",
+    "skills": ["Impressions", "Studying", "Manualism", "Twaddling"],
     "biopic": "images/kitty.jpg",
 
-/** This function takes bio information, applies helper.js formatting and
- *  attaches it to the relevant HTML section.
- */
-    display: function() {
-        var formattedName = HTMLheaderName.replace("%data%",bio.name);
-        var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        var formattedPic  = HTMLbioPic.replace("%data%", bio.biopic);
+/**
+* @description This function takes bio information, applies helper.js formatting and
+*  attaches it to the relevant HTML section.
+*/
+display: function() {
 
-        $("#header").prepend(formattedWelcomeMessage);
-        $("#header").prepend(formattedPic);
-        $("#header").prepend(formattedRole);
-        $("#header").prepend(formattedName);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-        $("#header").append(HTMLskillsStart);
-        for (i = 0; i < bio.skills.length; i++) {
-
-            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-            $("#header").append(formattedSkill);
-        }
-
-
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
-        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-        var idStrings = ["#topContacts", "#footerContacts"];
+    var idStrings = ["#topContacts", "#footerContacts"];
         for (var i = 0, id; i < idStrings.length; i++) {
             id = idStrings[i];
 
-            $(id).append(formattedLocation);
             $(id).append(formattedMobile);
             $(id).append(formattedEmail);
             $(id).append(formattedGithub);
+            $(id).append(formattedLocation);
+            }
+
+
+
+    var formattedName = HTMLheaderName.replace("%data%",bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    var formattedPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+    $("#header").append(formattedWelcomeMessage);
+    $("#header").append(formattedPic);
+
+
+
+    $("#header").append(HTMLskillsStart);
+    for (i = 0; i < bio.skills.length; i++) {
+
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#header").append(formattedSkill);
         }
     }
 };
 
-/** Stores an array of tertiary education information and online courses */
+/**
+* @description Stores an array of tertiary education information and online courses.
+*/
 var education = {
     "schools": [
     {
         "name": "Auckland University",
         "location": "22 Princes Street, Auckland, NZ",
         "degree": "BSc",
-        "majors": ["Geography"],
+        "majors": ["Geography (Physical)"],
         "dates": "2002",
         "url": "https://www.auckland.ac.nz/en.html"
 
@@ -66,8 +75,8 @@ var education = {
     {
         "name": "Auckland University",
         "location": "22 Princes Street, Auckland, NZ",
-        "degree": "Ba",
-        "majors": ["Philosopy"],
+        "degree": "BA",
+        "majors": ["Philosophy (Ethics)"],
         "dates": "2002",
         "url": "https://www.auckland.ac.nz/en.html"
     }
@@ -97,17 +106,16 @@ var education = {
             var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
             $(".education-entry:last").append(formattedDates);
 
-            var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+            var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].location);
             $(".education-entry:last").append(formattedCity);
 
             var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
             $(".education-entry:last").append(formattedMajor);
             }
-            $(".education-entry:last").append(HTMLonlineClasses);
 
             for (var course = 0; course < education.onlineCourses.length; course++) {
 
-
+                $(".education-entry:last").append(HTMLonlineClasses);
                 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
                 var formattedOnlineTitleAndSchool = formattedOnlineTitle + formattedOnlineSchool;
@@ -122,7 +130,9 @@ var education = {
         }
     }
 };
-/** Stores an array of jobs with the corresponding work details */
+/**
+* @description Stores an array of jobs with the corresponding work details.
+*/
 var work = {
     "jobs": [
         {
@@ -130,20 +140,21 @@ var work = {
             "title": "'Boss'",
             "location": "6 Sispara Place, Beach Haven, Auckland, NZ",
             "dates": "2009 - 2015",
-            "description": "Lawn mowing contractor"
+            "description": "Lawn mowing contractor."
         },
         {
             "employer": "NZ Post Inc",
             "title": "'Postie'",
             "location": "76 Porana Rd, Hillcrest, Auckland, NZ",
             "dates": "2004 - 2009",
-            "description": "Responsible for sorting and delivering residential mail"
+            "description": "Responsible for sorting and delivering residential mail."
         }
     ],
 
-/**This function takes work history information, applies formatting from helper.js and
- * attaches it to the relevant HTML section.
- */
+/**
+* @description This function takes work history information, applies formatting from helper.js and
+* attaches it to the relevant HTML section.
+*/
     display: function() {
     if (work.jobs.length > 0){
         for (var job = 0; job < work.jobs.length; job++) {
@@ -164,7 +175,9 @@ var work = {
         }
     }
 };
-
+/**
+* @description Stores an array of projects with the corresponding information.
+*/
 var projects = {
     "projects": [
         {
@@ -180,6 +193,11 @@ var projects = {
             "images": ["images/hyperloop3.jpg", "images/hyperloop2.jpg"]
         }
     ],
+
+/**
+* @description This function takes project information, applies formatting from helper.js and
+* attaches it to the relevant HTML section.
+*/
     display: function() {
     if (projects.projects.length > 0) {
         for (var project = 0; project < projects.projects.length; project++) {
@@ -204,7 +222,9 @@ var projects = {
         }
     }
 };
-
+/**
+* @description The display methods are called here and the information is processed.
+*/
 bio.display();
 education.display();
 work.display();
@@ -214,6 +234,5 @@ $("#mapDiv").append(googleMap);
 
 
 //Google Maps API: "Browser Key 1": "AIzaSyAvoT7YGnNfHpMCDKzcBd31jO9CNeO5qws"
-// DOn't forget encapsulation before you hand in! everything within an if whatever is > 0 etc
 
 
