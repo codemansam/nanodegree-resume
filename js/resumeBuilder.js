@@ -104,7 +104,7 @@ var education = {
             }
         }
     }
-};
+}
 
 var work = {
     "jobs": [
@@ -122,8 +122,27 @@ var work = {
             "dates": "2004 - 2009",
             "description": "Responsible for sorting and delivering residential mail"
         }
-    ]
-};
+    ],
+    display: function() {
+    if (work.jobs.length > 0){
+        for (var job = 0; job < work.jobs.length; job++) {
+            $("#workExperience").append(HTMLworkStart);
+
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+            var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
+
+            $(".work-entry:last").append(formattedEmployerTitle);
+
+            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+            $(".work-entry:last").append(formattedDates);
+
+            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+            $(".work-entry:last").append(formattedDescription);
+            }
+        }
+    }
+}
 
 var projects = {
     "projects": [
@@ -139,7 +158,6 @@ var projects = {
             "description": "Cheap, reliable, super quick travel? Sorted!",
             "images": ["images/hyperloop3.jpg", "images/hyperloop2.jpg"]
         }
-
     ]
 };
 
@@ -182,7 +200,7 @@ $("#header").append(HTMLskillsStart);
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#header").append(formattedSkill);
 }
-var displayWorkExperience = function() {
+/** var displayWorkExperience = function() {
     //if
     for (var job = 0; job < work.jobs.length; job++) {
         $("#workExperience").append(HTMLworkStart);
@@ -200,8 +218,8 @@ var displayWorkExperience = function() {
         $(".work-entry:last").append(formattedDescription);
     }
 };
-displayWorkExperience();
-
+*/
+work.display();
 //projects title dates description images
 var displayProjects = function() {
     //if
