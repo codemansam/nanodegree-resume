@@ -10,6 +10,7 @@ var bio = {
     "welcomeMessage": "Hi there!",
     "skills": ["awesomeness", "studying", "manualism", "twaddling"],
     "biopic": "images/fry.jpg",
+
     display: function() {
         var formattedName = HTMLheaderName.replace("%data%",bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -20,6 +21,13 @@ var bio = {
         $("#header").prepend(formattedPic);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
+
+        $("#header").append(HTMLskillsStart);
+        for (i = 0; i < bio.skills.length; i++) {
+
+            var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#header").append(formattedSkill);
+        }
 
 
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
@@ -218,12 +226,12 @@ var projects = {
 bio.display();
 
 // Skills
-$("#header").append(HTMLskillsStart);
-    for (i = 0; i < bio.skills.length; i++) {
+//$("#header").append(HTMLskillsStart);
+    //for (i = 0; i < bio.skills.length; i++) {
 
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#header").append(formattedSkill);
-}
+        //var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        //$("#header").append(formattedSkill);
+//}
 /** var displayWorkExperience = function() {
     //if
     for (var job = 0; job < work.jobs.length; job++) {
