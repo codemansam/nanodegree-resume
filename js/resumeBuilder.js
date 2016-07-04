@@ -5,10 +5,11 @@ var bio = {
         "mob": "022 656 7919",
         "email": "sam@stacked.co.nz",
         "github": "https://github.com/codemansam",
-        "location": "Auckland, NZ"
+        "location": "6 Sispara Place, Auckland, NZ"
     },
-    "pic": "images/fry.jpg",
     "welcomeMessage": "Hi there!",
+    "pic": "images/fry.jpg",
+
     "skills": ["awesomeness", "studying", "manualism", "twaddling"]
 };
 
@@ -19,14 +20,16 @@ var education = {
         "city": "Auckland, NZ",
         "degree": "BSc",
         "major": "Geography",
-        "date": "1998-2002"
+        "date": "1998-2002",
+        "location": "22 Princes Street, Auckland, NZ"
     },
     {
         "name": "Auckland University",
         "city": "Auckland, NZ",
         "degree": "Ba",
         "major": "Philosopy",
-        "date": "1998-2002"
+        "date": "1998-2002",
+        "location": "22 Princes Street, Auckland, NZ"
     }
     ],
     "onlineCourses": [
@@ -86,8 +89,8 @@ bio.display = function() {
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     var formattedPic  = HTMLbioPic.replace("%data%", bio.pic);
 
-    $("#header").prepend(formattedPic);
     $("#header").prepend(formattedWelcomeMessage);
+    $("#header").prepend(formattedPic);
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
 
