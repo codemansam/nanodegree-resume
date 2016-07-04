@@ -23,7 +23,13 @@ h6 {
 .project-entry {
   padding: 0 5%;
 }
-
+.online-education-entry {
+  font-size: 20px;
+  font-style: italic;
+  color: #999;
+  line-height: 22px;
+  padding-top: 10px;
+}
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -42,7 +48,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #999;
   line-height: 22px;
 }
 
