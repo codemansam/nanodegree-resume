@@ -8,8 +8,8 @@ var bio = {
         "location": "6 Sispara Place, Auckland, NZ"
     },
     "welcomeMessage": "Hi there!",
-    "skills": ["awesomeness", "studying", "manualism", "twaddling"]
-    "biopic": "images/fry.jpg",
+    "skills": ["awesomeness", "studying", "manualism", "twaddling"],
+    "biopic": "images/fry.jpg"
 };
 
 var education = {
@@ -19,7 +19,7 @@ var education = {
         "location": "22 Princes Street, Auckland, NZ",
         "degree": "BSc",
         "majors": ["Geography"],
-        "dates": "1998-2002",
+        "dates": "2002",
         "url": "https://www.auckland.ac.nz/en.html"
 
     },
@@ -28,7 +28,7 @@ var education = {
         "location": "22 Princes Street, Auckland, NZ",
         "degree": "Ba",
         "majors": ["Philosopy"],
-        "dates": "1998-2002",
+        "dates": "2002",
         "url": "https://www.auckland.ac.nz/en.html"
     }
     ],
@@ -67,19 +67,13 @@ var projects = {
             "title": "Fusion Power",
             "dates": "2016",
             "description": "Harness the power of the stars?  No problem, Sammy's solved it.",
-            "images": [
-            "images/fusion3.jpg",
-            "images/fusion1.jpg"
-            ]
+            "images": ["images/fusion3.jpg", "images/fusion1.jpg"]
         },
         {
             "title": "Hyperloop",
             "dates": "2014",
             "description": "Cheap, reliable, super quick travel? Sorted!",
-            "images": [
-            "images/hyperloop3.jpg",
-            "images/hyperloop2.jpg"
-            ]
+            "images": ["images/hyperloop3.jpg", "images/hyperloop2.jpg"]
         }
 
     ]
