@@ -9,13 +9,13 @@ var bio = {
     },
     "welcomeMessage": "Hi there!",
     "skills": ["awesomeness", "studying", "manualism", "twaddling"],
-    "biopic": "images/fry.jpg",
+    "biopic": "images/kitty.jpg",
 
     display: function() {
         var formattedName = HTMLheaderName.replace("%data%",bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
         var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        var formattedPic  = HTMLbioPic.replace("%data%", bio.pic);
+        var formattedPic  = HTMLbioPic.replace("%data%", bio.biopic);
 
         $("#header").prepend(formattedWelcomeMessage);
         $("#header").prepend(formattedPic);
@@ -253,8 +253,7 @@ bio.display();
 */
 work.display();
 //projects title dates description images
-var displayProjects = function() {
-    //if
+/**    //if
     for (var project = 0; project < projects.projects.length; project++) {
          $("#projects").append(HTMLprojectStart);
 
@@ -276,6 +275,7 @@ var displayProjects = function() {
 
     }
 };
+*/
 
 /**var displayEducation = function() {
     //if
@@ -316,6 +316,8 @@ var displayProjects = function() {
 
 $("#mapDiv").append(googleMap);
 
+
+//API key AIzaSyAvoT7YGnNfHpMCDKzcBd31jO9CNeO5qws
 // DOn't forget encapsulation before you hand in! everything within an if whatever is > 0 etc
 
 
