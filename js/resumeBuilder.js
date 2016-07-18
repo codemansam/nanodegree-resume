@@ -5,9 +5,10 @@ var bio = {
     "name": "Samuel Alexander",
     "role": "Web Developer",
     "contacts": {
-        "mob": "022 656 7919",
+        "mobile": "022 656 7919",
         "email": "sam@stacked.co.nz",
         "github": "https://github.com/codemansam",
+        "twitter": "@placeholder"
         "location": "6 Sispara Place, Auckland, NZ"
     },
     "welcomeMessage": "Hello there!  Welcome to my resume!",
