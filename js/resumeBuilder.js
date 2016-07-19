@@ -112,9 +112,11 @@ var education = {
                 $(".education-entry:last").append(formattedMajor);
             }
         }
+
+        $("#online-education").append(HTMLonlineClasses);
         if (education.onlineCourses.length > 0) {
             for (var course = 0; course < education.onlineCourses.length; course++) {
-                $("#online-education").append(HTMLonlineClasses);
+
 
                 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
