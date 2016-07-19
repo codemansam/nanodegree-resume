@@ -111,24 +111,26 @@ var education = {
                 var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
                 $(".education-entry:last").append(formattedMajor);
             }
-
+        }
+        if (education.onlineCourses.length > 0) {
             for (var course = 0; course < education.onlineCourses.length; course++) {
+                $("#online-education").append(HTMLonlineClasses);
 
-                $(".education-entry:last").append(HTMLonlineClasses);
                 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
                 var formattedOnlineTitleAndSchool = formattedOnlineTitle + formattedOnlineSchool;
-                $(".education-entry:last").append(formattedOnlineTitleAndSchool);
+                $(".online-education-entry:last").append(formattedOnlineTitleAndSchool);
 
                 var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-                $(".education-entry:last").append(formattedOnlineDates);
+                $(".online-education-entry:last").append(formattedOnlineDates);
 
                 var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-                $(".education-entry:last").append(formattedOnlineURL);
+                $(".online-education-entry:last").append(formattedOnlineURL);
             }
         }
     }
-};
+}
+
 /**
  * @description Stores an array of jobs with the corresponding work details.
  */
