@@ -93,10 +93,11 @@ var education = {
      * attaches it to the relevant HTML section.
      */
     display: function() {
+
+        $("#education").append(HTMLschoolStart);
         if (education.schools.length > 0) {
 
             for (var school = 0; school < education.schools.length; school++) {
-                $("#education").append(HTMLschoolStart);
 
                 var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
                 var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -112,11 +113,10 @@ var education = {
                 $(".education-entry:last").append(formattedMajor);
             }
         }
-
         $("#online-education").append(HTMLonlineClasses);
         if (education.onlineCourses.length > 0) {
-            for (var course = 0; course < education.onlineCourses.length; course++) {
 
+            for (var course = 0; course < education.onlineCourses.length; course++) {
 
                 var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
