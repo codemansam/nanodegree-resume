@@ -131,7 +131,7 @@ var education = {
             }
         }
     }
-}
+};
 
 /**
  * @description Stores an array of jobs with the corresponding work details.
