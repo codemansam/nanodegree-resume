@@ -8,7 +8,7 @@ var bio = {
         "mobile": "022 656 7919",
         "email": "sam@stacked.co.nz",
         "github": "https://github.com/codemansam",
-        "twitter": "@placeholder"
+        "twitter": "@placeholder",
         "location": "6 Sispara Place, Auckland, NZ"
     },
     "welcomeMessage": "Hello there!  Welcome to my resume!",
@@ -21,9 +21,10 @@ var bio = {
      */
     display: function() {
 
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mob);
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
         var idStrings = ["#topContacts", "#footerContacts"];
@@ -33,6 +34,7 @@ var bio = {
             $(id).append(formattedMobile);
             $(id).append(formattedEmail);
             $(id).append(formattedGithub);
+            $(id).append(formattedTwitter);
             $(id).append(formattedLocation);
         }
 
@@ -54,7 +56,7 @@ var bio = {
         for (i = 0; i < bio.skills.length; i++) {
 
             var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-            $("#header").append(formattedSkill);
+            $(".skills-h3").append(formattedSkill);
         }
     }
 };
